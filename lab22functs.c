@@ -18,7 +18,7 @@ void displayBiGrams(int biGrams[][MAX_NUM_WORDS], int size){
 
 FILE* openFile(char fName[], char fMode[]) {
 
-   FILE* file1 = fopen(fName, "r"); 
+   FILE* file1 = fopen(fName, fMode); 
 
       if (file1 == NULL) {
       printf("Could not open file.\n"); 
@@ -41,6 +41,9 @@ bool cleanString(char word[]) {
 }
 
 bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
+   char line[100]; 
+   int diff; 
+
    char string[MAX_WORD_LEN];
    fscanf(inFile, "%s", string);
    while(string != NULL){
@@ -48,5 +51,19 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
          return true;
       }
    }
+
+   fgets(line, 150, inFile);
+   diff = strcmp(line, word); 
+
+   if (diff = 0){
+      return true; 
+   }   
+   else{ 
+      return false; 
+   }
    return false;
+}
+
+int addStringToList(char word[], char wordList[][MAX_WORD_LEN], int words){
+   
 }
