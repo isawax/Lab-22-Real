@@ -41,7 +41,6 @@ bool cleanString(char word[]) {
 }
 
 bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
-   char line[100]; 
    int diff; 
 
    char string[MAX_WORD_LEN];
@@ -52,8 +51,7 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
       }
    }
 
-   fgets(line, 150, inFile);
-   diff = strcmp(line, word); 
+   diff = strcmp(string), word); 
 
    if (diff = 0){
       return true; 
@@ -65,5 +63,5 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
 }
 
 int addStringToList(char word[], char wordList[][MAX_WORD_LEN], int words){
-   
+
 }
