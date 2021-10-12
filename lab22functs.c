@@ -21,15 +21,32 @@ FILE* openFile(char fName[], char fMode[]) {
    FILE* file1 = fopen(fName, "r"); 
 
       if (file1 == NULL) {
-      printf("Could not open file movies.csv.\n"); 
-      return -1; 
+      printf("Could not open file.\n"); 
+      exit(1); 
       }
       return file1; 
 }
 
 bool cleanString(char word[]) {
 
-   for (int i = 0; i < strlen(word[]); i++) {
-      if (i)
+   for (int i = 0; i < strlen(word)-1; i++) {
+      if(isalpha(word[i])){
+         word[i] = tolower(word[i]);
+      }
+      else if(isalpha(word[i]) ==0){
+         return false;
+      }
    }
+   return true;
+}
+
+bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
+   char string[MAX_WORD_LEN];
+   fscanf(inFile, "%s", string);
+   while(string != NULL){
+      if(strcmp(string, word) == 0){
+         return true;
+      }
+   }
+   return false;
 }

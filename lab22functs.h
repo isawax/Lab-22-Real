@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 #define MAX_WORD_LEN 15
 #define MAX_NUM_WORDS 300
