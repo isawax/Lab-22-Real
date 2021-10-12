@@ -51,9 +51,9 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
       }
    }
 
-   diff = strcmp(string), word); 
+   diff = strcmp(string, word); 
 
-   if (diff = 0){
+   if (diff == 0){
       return true; 
    }   
    else{ 
@@ -63,5 +63,26 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]){
 }
 
 int addStringToList(char word[], char wordList[][MAX_WORD_LEN], int words){
-
+   strcpy(wordList[words], word);
+   return words+1;
 }
+
+int addUniqueStringToList(char word[], char wordList[][MAX_WORD_LEN], int words){
+   for(int i = 0; i<words; i++){
+      if(strcmp(wordList[i], word) == 0){
+         return words;
+      }
+   }
+   strcpy(wordList[words], word);
+   return words+1;
+}
+
+int getWordListNum(char word[], char wordList[][MAX_WORD_LEN], int length){
+   for(int i = 0; i<length; i++){
+      if(strcmp(wordList[i], word) == 0){
+         return i;
+      }
+   }
+   return 0;
+}
+

@@ -43,7 +43,7 @@ bool getStringFromFile(FILE* inFile, char word[MAX_WORD_LEN]);
  * @param word the word to append to list
  * @param wordList an array of strings
  * @param words the count of words already in the array
- * @return the new cound of words (incremented)
+ * @return the new count of words (incremented)
  * @pre count is not negative
  * @post the list is one string longer
  */
